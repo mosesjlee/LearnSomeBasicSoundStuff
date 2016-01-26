@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		915640B41C56F50B00D6D771 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 915640AC1C56F50B00D6D771 /* AudioFileReader.mm */; };
+		915640B51C56F50B00D6D771 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915640AE1C56F50B00D6D771 /* AudioFileWriter.m */; };
+		915640B61C56F50B00D6D771 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 915640B11C56F50B00D6D771 /* Novocaine.m */; };
+		915640B71C56F50B00D6D771 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 915640B31C56F50B00D6D771 /* RingBuffer.mm */; };
 		9180AC4F1C56D741000335FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC4E1C56D741000335FF /* AppDelegate.m */; };
 		9180AC521C56D741000335FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC511C56D741000335FF /* main.m */; };
 		9180AC551C56D741000335FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC541C56D741000335FF /* ViewController.m */; };
@@ -15,6 +19,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		915640AB1C56F50B00D6D771 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		915640AC1C56F50B00D6D771 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		915640AD1C56F50B00D6D771 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		915640AE1C56F50B00D6D771 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		915640AF1C56F50B00D6D771 /* MathObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathObject.h; sourceTree = "<group>"; };
+		915640B01C56F50B00D6D771 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		915640B11C56F50B00D6D771 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		915640B21C56F50B00D6D771 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		915640B31C56F50B00D6D771 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
 		9180AC4A1C56D741000335FF /* LearnSomeBasicSoundStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSomeBasicSoundStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9180AC4D1C56D741000335FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9180AC4E1C56D741000335FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,6 +50,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		915640AA1C56F50B00D6D771 /* Novocaine */ = {
+			isa = PBXGroup;
+			children = (
+				915640AB1C56F50B00D6D771 /* AudioFileReader.h */,
+				915640AC1C56F50B00D6D771 /* AudioFileReader.mm */,
+				915640AD1C56F50B00D6D771 /* AudioFileWriter.h */,
+				915640AE1C56F50B00D6D771 /* AudioFileWriter.m */,
+				915640AF1C56F50B00D6D771 /* MathObject.h */,
+				915640B01C56F50B00D6D771 /* Novocaine.h */,
+				915640B11C56F50B00D6D771 /* Novocaine.m */,
+				915640B21C56F50B00D6D771 /* RingBuffer.h */,
+				915640B31C56F50B00D6D771 /* RingBuffer.mm */,
+			);
+			path = Novocaine;
+			sourceTree = "<group>";
+		};
 		9180AC411C56D740000335FF = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +85,7 @@
 		9180AC4C1C56D741000335FF /* LearnSomeBasicSoundStuff */ = {
 			isa = PBXGroup;
 			children = (
+				915640AA1C56F50B00D6D771 /* Novocaine */,
 				9180AC4D1C56D741000335FF /* AppDelegate.h */,
 				9180AC4E1C56D741000335FF /* AppDelegate.m */,
 				9180AC531C56D741000335FF /* ViewController.h */,
@@ -147,7 +177,11 @@
 			files = (
 				9180AC551C56D741000335FF /* ViewController.m in Sources */,
 				9180AC521C56D741000335FF /* main.m in Sources */,
+				915640B61C56F50B00D6D771 /* Novocaine.m in Sources */,
+				915640B71C56F50B00D6D771 /* RingBuffer.mm in Sources */,
+				915640B51C56F50B00D6D771 /* AudioFileWriter.m in Sources */,
 				9180AC4F1C56D741000335FF /* AppDelegate.m in Sources */,
+				915640B41C56F50B00D6D771 /* AudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +321,7 @@
 				9180AC601C56D741000335FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
