@@ -678,20 +678,20 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Delay" identifier="1" id="N3q-9U-xmX">
-                                        <view key="view" ambiguous="YES" id="d7W-83-KAH">
-                                            <rect key="frame" x="10" y="33" width="587" height="353"/>
+                                        <view key="view" id="d7W-83-KAH">
+                                            <rect key="frame" x="10" y="33" width="251" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-Z1-nSJ">
-                                                    <rect key="frame" x="79" y="236" width="184" height="21"/>
+                                                    <rect key="frame" x="79" y="-117" width="184" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="1000" tickMarkPosition="above" sliderType="linear" id="mpy-5m-o2c"/>
                                                 </slider>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eV9-7i-BcQ">
-                                                    <rect key="frame" x="79" y="157" width="184" height="21"/>
+                                                    <rect key="frame" x="79" y="-196" width="184" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="eok-Jk-vG7"/>
                                                 </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BN-qU-uq1">
-                                                    <rect key="frame" x="79" y="268" width="119" height="17"/>
+                                                    <rect key="frame" x="79" y="-85" width="119" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Delay Length" id="H2X-uf-wLP">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -699,7 +699,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-wT-JYf">
-                                                    <rect key="frame" x="92" y="184" width="92" height="17"/>
+                                                    <rect key="frame" x="92" y="-169" width="92" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Feedback Gain" id="X8b-yZ-ege">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -707,7 +707,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4m-fm-vVv">
-                                                    <rect key="frame" x="188" y="265" width="60" height="22"/>
+                                                    <rect key="frame" x="188" y="-88" width="60" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Hiy-cD-drp">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -715,7 +715,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BfD-In-7h6">
-                                                    <rect key="frame" x="188" y="184" width="60" height="22"/>
+                                                    <rect key="frame" x="188" y="-169" width="60" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1Mg-yL-JyD">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -731,11 +731,31 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jI7-Ej-yvf">
-                                                    <rect key="frame" x="235" y="268" width="37" height="17"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Distortion" id="jVy-WN-wGx">
+                                                    <rect key="frame" x="258" y="333" width="70" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Distortion" id="jVy-WN-wGx">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUn-qb-rzf">
+                                                    <rect key="frame" x="245" y="249" width="96" height="21"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10" tickMarkPosition="above" sliderType="linear" id="ZyF-qO-zQ8"/>
+                                                </slider>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1x-Je-1km">
+                                                    <rect key="frame" x="275" y="306" width="37" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gain" id="dAD-Gy-Ma1">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcV-9B-ffN">
+                                                    <rect key="frame" x="269" y="276" width="49" height="22"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xwY-pz-IHP">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
                                             </subviews>
@@ -748,7 +768,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Don't Know" identifier="4" id="Dqo-Am-Oop">
-                                        <view key="view" id="Dfr-Rv-Ktj">
+                                        <view key="view" ambiguous="YES" id="Dfr-Rv-Ktj">
                                             <rect key="frame" x="10" y="33" width="587" height="353"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
@@ -765,11 +785,49 @@
                                     <action selector="playPause:" target="XfG-lQ-9wD" id="njs-aO-QdE"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Wa-up-A6u">
+                                <rect key="frame" x="101" y="13" width="100" height="32"/>
+                                <buttonCell key="cell" type="push" title="Sine Tone" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uEt-tB-MGb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playSineTone:" target="XfG-lQ-9wD" id="G3K-fq-o9N"/>
+                                </connections>
+                            </button>
+                            <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lFI-lA-4BA">
+                                <rect key="frame" x="5" y="22" width="96" height="21"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="220" maxValue="2200" doubleValue="220" tickMarkPosition="above" sliderType="linear" id="b3V-xa-sTn"/>
+                                <connections>
+                                    <action selector="changeFreq:" target="XfG-lQ-9wD" id="GNE-pF-rvu"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rar-ov-upV">
+                                <rect key="frame" x="5" y="49" width="56" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="0" id="kqg-kq-8zG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="updateFreqLabel:" target="XfG-lQ-9wD" id="NuJ-x3-Wba"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTT-BA-yKf">
+                                <rect key="frame" x="65" y="49" width="21" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hz" id="I8f-Kx-Glt">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="freqLabel" destination="rar-ov-upV" id="Lz0-BX-Vlo"/>
                         <outlet property="playPauseButton" destination="y7L-N9-FoN" id="hYt-1I-C6e"/>
                         <outlet property="selectTab" destination="Dfr-Rv-Ktj" id="UfK-4Q-XaA"/>
+                        <outlet property="sineFreqSlider" destination="lFI-lA-4BA" id="QZ0-Fk-9Jb"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
