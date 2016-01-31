@@ -16,6 +16,11 @@
     self.ringBuffer = new RingBuffer(32768, 2);
     self.playFlag = NO;
     self.playSine = NO;
+    
+    //Open a simple mono guitar file
+    NSString * path = [[NSBundle mainBundle] pathForResource:  @"guitar1" ofType: @"wav"];
+    self.monoGuitar = new WaveReader([path cStringUsingEncoding:1]);
+    self.monoGuitar->fillSamples();
     // Do any additional setup after loading the view.
 }
 
@@ -31,9 +36,9 @@
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
          if(self.playSine){
-             self.sineOsc->tick(data, numFrames);
+             self.sineOsc->tick(data, numFrames, numChannels);
          } else {
-             
+             self.monoGuitar->tick(data, numFrames, numChannels);
          }
          
      }];
@@ -64,6 +69,10 @@
     }
 }
 
+//Delay Stuff
+- (IBAction)setTapTempo:(id)sender {
+}
+
 //Play Sine
 - (IBAction)playSineTone:(id)sender {
     if(self.sineOsc == nil) {
@@ -71,6 +80,10 @@
     }
     
     self.playSine = !self.playSine;
+    
+#if DEBUG
+    NSLog(@"playSine: %d", self.playSine);
+#endif
 }
 
 - (IBAction)changeFreq:(id)sender {

@@ -20,6 +20,11 @@
 		91B6E8801C5C8DF1003E0CC9 /* SineWaveOsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E87E1C5C8DF1003E0CC9 /* SineWaveOsc.cpp */; };
 		91B6E8831C5C8E0D003E0CC9 /* WaveReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E8811C5C8E0D003E0CC9 /* WaveReader.cpp */; };
 		91B6E8861C5C8E83003E0CC9 /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E8841C5C8E83003E0CC9 /* LowPassFilter.cpp */; };
+		91E1CA4E1C5E93C7001A9AC0 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA4C1C5E93C7001A9AC0 /* Utilities.cpp */; };
+		91E1CA511C5E9DFC001A9AC0 /* DelayModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA4F1C5E9DFC001A9AC0 /* DelayModule.cpp */; };
+		91E1CA571C5E9FC8001A9AC0 /* AdderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA521C5E9FC8001A9AC0 /* AdderObject.cpp */; };
+		91E1CA581C5E9FC8001A9AC0 /* MultiplierObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA551C5E9FC8001A9AC0 /* MultiplierObject.cpp */; };
+		91E1CA5A1C5EA4CC001A9AC0 /* guitar1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91E1CA591C5EA4CC001A9AC0 /* guitar1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,16 @@
 		91B6E8851C5C8E83003E0CC9 /* LowPassFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LowPassFilter.hpp; sourceTree = "<group>"; };
 		91B6E8871C5C8EDD003E0CC9 /* AudioSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSpec.h; sourceTree = "<group>"; };
 		91B6E8881C5C9826003E0CC9 /* MySoundStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySoundStuff.h; sourceTree = "<group>"; };
+		91E1CA4C1C5E93C7001A9AC0 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		91E1CA4D1C5E93C7001A9AC0 /* Utilities.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
+		91E1CA4F1C5E9DFC001A9AC0 /* DelayModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayModule.cpp; sourceTree = "<group>"; };
+		91E1CA501C5E9DFC001A9AC0 /* DelayModule.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DelayModule.hpp; sourceTree = "<group>"; };
+		91E1CA521C5E9FC8001A9AC0 /* AdderObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdderObject.cpp; sourceTree = "<group>"; };
+		91E1CA531C5E9FC8001A9AC0 /* AdderObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AdderObject.hpp; sourceTree = "<group>"; };
+		91E1CA541C5E9FC8001A9AC0 /* MathObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathObject.h; sourceTree = "<group>"; };
+		91E1CA551C5E9FC8001A9AC0 /* MultiplierObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiplierObject.cpp; sourceTree = "<group>"; };
+		91E1CA561C5E9FC8001A9AC0 /* MultiplierObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MultiplierObject.hpp; sourceTree = "<group>"; };
+		91E1CA591C5EA4CC001A9AC0 /* guitar1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guitar1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +84,17 @@
 			children = (
 				91B6E8871C5C8EDD003E0CC9 /* AudioSpec.h */,
 				91B6E8881C5C9826003E0CC9 /* MySoundStuff.h */,
+				91E1CA4D1C5E93C7001A9AC0 /* Utilities.hpp */,
+				91E1CA4C1C5E93C7001A9AC0 /* Utilities.cpp */,
+				91E1CA541C5E9FC8001A9AC0 /* MathObject.h */,
+				91E1CA531C5E9FC8001A9AC0 /* AdderObject.hpp */,
+				91E1CA521C5E9FC8001A9AC0 /* AdderObject.cpp */,
+				91E1CA561C5E9FC8001A9AC0 /* MultiplierObject.hpp */,
+				91E1CA551C5E9FC8001A9AC0 /* MultiplierObject.cpp */,
 				914D6D301C59F53200B6C476 /* DelayLine.hpp */,
 				914D6D2F1C59F53200B6C476 /* DelayLine.cpp */,
+				91E1CA501C5E9DFC001A9AC0 /* DelayModule.hpp */,
+				91E1CA4F1C5E9DFC001A9AC0 /* DelayModule.cpp */,
 				91B6E87F1C5C8DF1003E0CC9 /* SineWaveOsc.h */,
 				91B6E87E1C5C8DF1003E0CC9 /* SineWaveOsc.cpp */,
 				91B6E8821C5C8E0D003E0CC9 /* WaveReader.hpp */,
@@ -116,11 +140,12 @@
 		9180AC4C1C56D741000335FF /* LearnSomeBasicSoundStuff */ = {
 			isa = PBXGroup;
 			children = (
-				915640AA1C56F50B00D6D771 /* Novocaine */,
+				91E1CA591C5EA4CC001A9AC0 /* guitar1.wav */,
 				9180AC4D1C56D741000335FF /* AppDelegate.h */,
 				9180AC4E1C56D741000335FF /* AppDelegate.mm */,
 				9180AC531C56D741000335FF /* ViewController.h */,
 				9180AC541C56D741000335FF /* ViewController.mm */,
+				915640AA1C56F50B00D6D771 /* Novocaine */,
 				914D6D2E1C59F51A00B6C476 /* MySoundStuff */,
 				9180AC561C56D741000335FF /* Assets.xcassets */,
 				9180AC581C56D741000335FF /* Main.storyboard */,
@@ -196,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9180AC571C56D741000335FF /* Assets.xcassets in Resources */,
+				91E1CA5A1C5EA4CC001A9AC0 /* guitar1.wav in Resources */,
 				9180AC5A1C56D741000335FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +235,10 @@
 			files = (
 				9180AC551C56D741000335FF /* ViewController.mm in Sources */,
 				9180AC521C56D741000335FF /* main.m in Sources */,
+				91E1CA4E1C5E93C7001A9AC0 /* Utilities.cpp in Sources */,
+				91E1CA511C5E9DFC001A9AC0 /* DelayModule.cpp in Sources */,
 				915640B61C56F50B00D6D771 /* Novocaine.m in Sources */,
+				91E1CA571C5E9FC8001A9AC0 /* AdderObject.cpp in Sources */,
 				915640B71C56F50B00D6D771 /* RingBuffer.mm in Sources */,
 				91B6E8801C5C8DF1003E0CC9 /* SineWaveOsc.cpp in Sources */,
 				91B6E8861C5C8E83003E0CC9 /* LowPassFilter.cpp in Sources */,
@@ -217,6 +246,7 @@
 				914D6D311C59F53200B6C476 /* DelayLine.cpp in Sources */,
 				9180AC4F1C56D741000335FF /* AppDelegate.mm in Sources */,
 				915640B41C56F50B00D6D771 /* AudioFileReader.mm in Sources */,
+				91E1CA581C5E9FC8001A9AC0 /* MultiplierObject.cpp in Sources */,
 				91B6E8831C5C8E0D003E0CC9 /* WaveReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

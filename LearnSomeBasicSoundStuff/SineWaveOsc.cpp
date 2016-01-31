@@ -50,11 +50,14 @@ float SineWaveOsc::tick()
     return val;
 }
 
-void SineWaveOsc::tick(float * buffer, const int numSamples)
+void SineWaveOsc::tick(float * buffer, const unsigned int numSamples, const unsigned int numChannels)
 {
     for (int i = 0; i < numSamples; i++)
     {
-        buffer[i] = table[(int) index];
+        for (int j = 0; j < numChannels; j++){
+            buffer[i * numChannels + j] = table[(int) index];
+        }
+        
         index += delta_i;
         
         //Out of bounds check

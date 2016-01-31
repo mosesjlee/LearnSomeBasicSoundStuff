@@ -10,19 +10,28 @@
 #define DelayLine_hpp
 
 #include <stdio.h>
-#define MAX_DELAY 2000 //Maximum amount of delay in milliseconds = 88200 Samples if SR is 44100
+#include <memory>
+
+#include "AudioSpec.h"
+#include "Utilities.hpp"
+
+#define MAX_DELAY 4000 //Maximum amount of delay in milliseconds = 176400 Samples if SR is 44100
+#define MILLISECONDS 1000 //1000 Milliseconds in a second
 class DelayLine {
 public:
     DelayLine();
     DelayLine(unsigned int maxDelay);
     ~DelayLine();
     void setDelay(float newDelay);
-    void tick(float * buffer);
+    void tick(float * buffer, const unsigned int numFrames, const unsigned int numChannels);
+    void fillInputBuffer(float * buffer, const unsigned int numSamples);
     
 private:
-    float * buffer;
+    std::unique_ptr<float[]> buffer;
     int readIndex;
     int writeIndex;
+    int maxDelay;
+    float currentDelay;
 };
 
 #endif /* DelayLine_hpp */

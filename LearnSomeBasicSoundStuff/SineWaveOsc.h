@@ -17,7 +17,7 @@ public:
     ~SineWaveOsc();
     void setFreq(float freq);
     float tick();
-    void tick(float * buffer, const int numSamples);
+    void tick(float * buffer, const unsigned int numSamples, const unsigned int numChannels);
     
 private:
     float * table;

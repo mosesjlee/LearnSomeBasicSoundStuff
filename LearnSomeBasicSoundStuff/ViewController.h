@@ -18,8 +18,13 @@
 @interface ViewController : NSViewController
 @property (strong) IBOutlet NSView *selectTab;
 @property (strong) IBOutlet NSButton *playPauseButton;
+
+//Sine oscillator UI elements
 @property (strong) IBOutlet NSSlider *sineFreqSlider;
 @property (strong) IBOutlet NSTextField *freqLabel;
+
+//Delay UI elements
+@property (strong) IBOutlet NSButton *tapTempoButton;
 
 //My Flags
 @property (nonatomic) BOOL playFlag;
@@ -33,6 +38,7 @@
 
 //MySoundStuff
 @property (nonatomic) SineWaveOsc * sineOsc;
+@property (nonatomic) WaveReader * monoGuitar;
 
 @end
 
