@@ -134,7 +134,7 @@ void WaveReader::tick(float * buffer, int numFrames, int channels){
         for (int i = 0; i < numFrames; i++) {
             float val = samples[outputIndex];
             //just output it to the left one
-            for(int j = 0; j < 1; j++){
+            for(int j = 0; j < channels; j++){
                 buffer[i * channels + j] = val;
             }
             outputIndex = (outputIndex + 1) % frames;

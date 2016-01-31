@@ -39,12 +39,23 @@
              self.sineOsc->tick(data, numFrames, numChannels);
          } else {
              self.monoGuitar->tick(data, numFrames, numChannels);
+             //Zero fill this
+//             for (int i = 0; i < numFrames; i++){
+//                 for (int j = 0; j < numChannels; j++){
+//                     data[i * numChannels + j] = 0;
+//                 }
+//             }
          }
-         
      }];
 }
 
+
 - (void)viewDidDisappear{
+    if (self.playFlag){
+        self.playFlag = NO;
+        [self.audioManager pause];
+    }
+    
     if(self.sineOsc != nil){
         delete self.sineOsc;
     }
