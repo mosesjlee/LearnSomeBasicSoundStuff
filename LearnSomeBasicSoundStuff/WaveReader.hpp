@@ -68,6 +68,8 @@ public:
     WaveReader(string pathname);
     void fillSamples();
     void tick(float * buffer, int numFrames, int channels);
+    float * getBuffer();
+    struct wavHeader * getFileInfo();
     
 };
 

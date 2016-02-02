@@ -8,6 +8,7 @@
 
 #ifndef MySoundStuff_h
 #include "DelayLine.hpp"
+#include "DelayModule.hpp"
 #include "SineWaveOsc.h"
 #include "WaveReader.hpp"
 #include "LowPassFilter.hpp"

@@ -23,8 +23,8 @@ public:
     DelayLine(unsigned int maxDelay);
     ~DelayLine();
     void setDelay(float newDelay);
-    void tick(float * buffer, const unsigned int numFrames, const unsigned int numChannels);
-    void fillInputBuffer(float * buffer, const unsigned int numSamples);
+    void fillOutputBuffer(float * buffer, const unsigned int numSamples, int blockPos);
+    void fillInputBuffer(float * buffer, const unsigned int numSamples, int blockPos);
     
 private:
     std::unique_ptr<float[]> buffer;

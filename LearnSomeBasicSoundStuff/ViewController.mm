@@ -12,6 +12,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     self.audioManager = [Novocaine audioManager];
     self.ringBuffer = new RingBuffer(32768, 2);
     self.playFlag = NO;
@@ -21,7 +23,10 @@
     NSString * path = [[NSBundle mainBundle] pathForResource:  @"guitar1" ofType: @"wav"];
     self.monoGuitar = new WaveReader([path cStringUsingEncoding:1]);
     self.monoGuitar->fillSamples();
-    // Do any additional setup after loading the view.
+    
+    //Set up the delay module
+    self.delayModule = new DelayModule();
+    
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -38,13 +43,12 @@
          if(self.playSine){
              self.sineOsc->tick(data, numFrames, numChannels);
          } else {
-             self.monoGuitar->tick(data, numFrames, numChannels);
-             //Zero fill this
-//             for (int i = 0; i < numFrames; i++){
-//                 for (int j = 0; j < numChannels; j++){
-//                     data[i * numChannels + j] = 0;
-//                 }
-//             }
+//             self.monoGuitar->tick(data, numFrames, numChannels);
+             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
+//             self.delayModule->fillInputBuffer(self.monoGuitar->getBuffer(), MAX_SAMPLES, );
+             self.delayModule->processNextSamples();
+             self.delayModule->tick(data, numFrames, numChannels);
+
          }
      }];
 }
@@ -80,11 +84,55 @@
     }
 }
 
-//Delay Stuff
+/*******************************************************************************
+ 
+ Delay Controls
+ 
+ *******************************************************************************/
 - (IBAction)setTapTempo:(id)sender {
 }
 
-//Play Sine
+- (IBAction)updateDelayLength:(id)sender {
+    self.delayModule->setDelayTime(self.delayLengthSlider.floatValue);
+    self.delayLengthText.stringValue =
+            [NSString stringWithFormat:@"%.2f", self.delayLengthSlider.floatValue];
+}
+
+- (IBAction)updateDelayLengthFromText:(id)sender {
+}
+
+- (IBAction)updateFeedbackGain:(id)sender {
+    self.delayModule->setFeedbackGain(self.feedbackGainSlider.floatValue);
+    self.feedbackGainText.stringValue =
+            [NSString stringWithFormat:@"%.2f", self.feedbackGainSlider.floatValue];
+}
+
+- (IBAction)updateFeedbackGainFromText:(id)sender {
+}
+
+- (IBAction)updateWetGain:(id)sender {
+    self.delayModule->setWetGain(self.wetGainSlider.floatValue);
+    self.wetGainText.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.wetGainSlider.floatValue];
+}
+
+- (IBAction)updateWetGainFromText:(id)sender {
+}
+
+- (IBAction)updateDryGain:(id)sender {
+    self.delayModule->setDryGain(self.dryGainSlider.floatValue);
+    self.dryGainText.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.dryGainSlider.floatValue];
+}
+
+- (IBAction)updateDryGainFromText:(id)sender {
+}
+
+/*******************************************************************************
+ 
+ Play Sine
+ 
+ *******************************************************************************/
 - (IBAction)playSineTone:(id)sender {
     if(self.sineOsc == nil) {
         self.sineOsc = new SineWaveOsc();
@@ -103,5 +151,6 @@
     }
     self.freqLabel.stringValue = [NSString stringWithFormat:@"%.2f", self.sineFreqSlider.floatValue];
 }
+
 
 @end

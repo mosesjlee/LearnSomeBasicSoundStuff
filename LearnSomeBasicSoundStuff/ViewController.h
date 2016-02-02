@@ -25,6 +25,14 @@
 
 //Delay UI elements
 @property (strong) IBOutlet NSButton *tapTempoButton;
+@property (strong) IBOutlet NSTextField *delayLengthText;
+@property (strong) IBOutlet NSSlider *delayLengthSlider;
+@property (strong) IBOutlet NSTextField *feedbackGainText;
+@property (strong) IBOutlet NSSlider *feedbackGainSlider;
+@property (strong) IBOutlet NSTextField *wetGainText;
+@property (strong) IBOutlet NSSlider *wetGainSlider;
+@property (strong) IBOutlet NSTextField *dryGainText;
+@property (strong) IBOutlet NSSlider *dryGainSlider;
 
 //My Flags
 @property (nonatomic) BOOL playFlag;
@@ -39,6 +47,7 @@
 //MySoundStuff
 @property (nonatomic) SineWaveOsc * sineOsc;
 @property (nonatomic) WaveReader * monoGuitar;
+@property (nonatomic) DelayModule * delayModule;
 
 @end
 

@@ -152,3 +152,11 @@ void WaveReader::tick(float * buffer, int numFrames, int channels){
     }
 }
 
+float * WaveReader::getBuffer(){
+    return samples.get();
+}
+
+struct wavHeader * WaveReader::getFileInfo(){
+    return &wav;
+}
+

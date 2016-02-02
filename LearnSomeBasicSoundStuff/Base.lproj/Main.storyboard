@@ -684,22 +684,20 @@
                                             <subviews>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-Z1-nSJ">
                                                     <rect key="frame" x="79" y="236" width="184" height="21"/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="1000" tickMarkPosition="above" sliderType="linear" id="mpy-5m-o2c"/>
+                                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="2000" tickMarkPosition="above" sliderType="linear" id="mpy-5m-o2c"/>
+                                                    <connections>
+                                                        <action selector="updateDelayLength:" target="XfG-lQ-9wD" id="whT-B0-5VL"/>
+                                                    </connections>
                                                 </slider>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eV9-7i-BcQ">
-                                                    <rect key="frame" x="79" y="157" width="184" height="21"/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="eok-Jk-vG7"/>
+                                                    <rect key="frame" x="79" y="173" width="184" height="21"/>
+                                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="eok-Jk-vG7"/>
+                                                    <connections>
+                                                        <action selector="updateFeedbackGain:" target="XfG-lQ-9wD" id="OiQ-7l-nNd"/>
+                                                    </connections>
                                                 </slider>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BN-qU-uq1">
-                                                    <rect key="frame" x="79" y="268" width="119" height="17"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Delay Length" id="H2X-uf-wLP">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-wT-JYf">
-                                                    <rect key="frame" x="92" y="184" width="92" height="17"/>
+                                                    <rect key="frame" x="92" y="204" width="92" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Feedback Gain" id="X8b-yZ-ege">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -707,20 +705,26 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4m-fm-vVv">
-                                                    <rect key="frame" x="188" y="265" width="60" height="22"/>
+                                                    <rect key="frame" x="190" y="265" width="60" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Hiy-cD-drp">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <connections>
+                                                        <action selector="updateDelayLengthFromText:" target="XfG-lQ-9wD" id="Fos-YR-wcp"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BfD-In-7h6">
-                                                    <rect key="frame" x="188" y="184" width="60" height="22"/>
+                                                    <rect key="frame" x="190" y="201" width="60" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1Mg-yL-JyD">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
+                                                    <connections>
+                                                        <action selector="updateFeedbackGainFromText:" target="XfG-lQ-9wD" id="RYn-VY-ade"/>
+                                                    </connections>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L24-Cv-QA2">
                                                     <rect key="frame" x="376" y="259" width="101" height="32"/>
@@ -732,6 +736,66 @@
                                                         <action selector="setTapTempo:" target="XfG-lQ-9wD" id="bE7-OY-6cs"/>
                                                     </connections>
                                                 </button>
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1J-CS-8lw">
+                                                    <rect key="frame" x="79" y="96" width="184" height="21"/>
+                                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="acf-5c-HY8"/>
+                                                    <connections>
+                                                        <action selector="updateWetGain:" target="XfG-lQ-9wD" id="Nky-vw-LBm"/>
+                                                    </connections>
+                                                </slider>
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-Pg-zLb">
+                                                    <rect key="frame" x="79" y="41" width="184" height="21"/>
+                                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="1b1-D7-rrf"/>
+                                                    <connections>
+                                                        <action selector="updateDryGain:" target="XfG-lQ-9wD" id="9Us-hT-mKn"/>
+                                                    </connections>
+                                                </slider>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-LS-MW6">
+                                                    <rect key="frame" x="92" y="133" width="70" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wet Gain" id="lks-0V-CDr">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFh-TL-Rne">
+                                                    <rect key="frame" x="190" y="133" width="60" height="22"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0kh-jx-ojK">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <action selector="updateWetGainFromText:" target="XfG-lQ-9wD" id="b7O-1j-CZp"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwV-M1-yH0">
+                                                    <rect key="frame" x="190" y="68" width="60" height="22"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VEm-MS-GjG">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <action selector="updateDryGainFromText:" target="XfG-lQ-9wD" id="MSk-cL-bjI"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCZ-yO-LmV">
+                                                    <rect key="frame" x="92" y="73" width="70" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dry Gain" id="kI2-8k-fUv">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BN-qU-uq1">
+                                                    <rect key="frame" x="92" y="268" width="106" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Delay Length" id="H2X-uf-wLP">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
@@ -834,11 +898,19 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="delayLengthSlider" destination="cFr-Z1-nSJ" id="yAY-Q9-ji1"/>
+                        <outlet property="delayLengthText" destination="H4m-fm-vVv" id="NfG-WA-Xfl"/>
+                        <outlet property="dryGainSlider" destination="Ki1-Pg-zLb" id="fMb-oC-v8y"/>
+                        <outlet property="dryGainText" destination="LwV-M1-yH0" id="cAQ-2S-kH9"/>
+                        <outlet property="feedbackGainSlider" destination="eV9-7i-BcQ" id="7j2-4C-wbg"/>
+                        <outlet property="feedbackGainText" destination="BfD-In-7h6" id="lPn-RV-bSI"/>
                         <outlet property="freqLabel" destination="rar-ov-upV" id="Lz0-BX-Vlo"/>
                         <outlet property="playPauseButton" destination="y7L-N9-FoN" id="hYt-1I-C6e"/>
                         <outlet property="selectTab" destination="Dfr-Rv-Ktj" id="UfK-4Q-XaA"/>
                         <outlet property="sineFreqSlider" destination="lFI-lA-4BA" id="QZ0-Fk-9Jb"/>
                         <outlet property="tapTempoButton" destination="L24-Cv-QA2" id="WL7-sV-8dV"/>
+                        <outlet property="wetGainSlider" destination="p1J-CS-8lw" id="dWR-sU-qkp"/>
+                        <outlet property="wetGainText" destination="JFh-TL-Rne" id="c54-xe-gWz"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
