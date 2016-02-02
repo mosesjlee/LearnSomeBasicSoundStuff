@@ -11,6 +11,7 @@
 
 DelayLine::DelayLine(){
     buffer.reset(new float[MAX_DELAY * SR/MILLISECONDS]);
+    for (int i = 0; i < MAX_DELAY * SR/MILLISECONDS; i++) buffer[i] = 0.0;
     maxDelay = MAX_DELAY * SR/MILLISECONDS;
     readIndex = 0;
     writeIndex = 0;
@@ -25,6 +26,7 @@ DelayLine::DelayLine(unsigned int newMaxDelay){
         buffer.reset(new float[newMaxDelay * SR/MILLISECONDS]);
         maxDelay = newMaxDelay * SR/MILLISECONDS;
     }
+    for (int i = 0; i < maxDelay; i++) buffer[i] = 0.0;
     readIndex = 0;
     writeIndex = 0;
     currentDelay = 0.0;
@@ -41,9 +43,8 @@ void DelayLine::setDelay(float newDelay){
 
 void DelayLine::fillInputBuffer(float * inBuffer, const unsigned int numSamples, int blockPos){
     for (int i = 0; i < numSamples; i++){
-        buffer[writeIndex] = inBuffer[blockPos];
+        buffer[writeIndex] = inBuffer[i];
         writeIndex = (writeIndex + 1) % maxDelay;
-        blockPos = (blockPos + 1) % numSamples;
     }
 }
 
@@ -51,9 +52,6 @@ void DelayLine::fillOutputBuffer(float * outBuffer, const unsigned int numSample
     readIndex = writeIndex - currentDelay;
     if(readIndex < 0) readIndex = maxDelay - currentDelay - 1;
     
-#if DEBUG1
-    std::cout << "read index " << readIndex << "write index: " << writeIndex << std::endl;
-#endif
 //    float fracDelayDiff = currentDelay - (int) currentDelay;
 //    float fracDelayDiff_2 = 0.0;
 //    
@@ -61,12 +59,14 @@ void DelayLine::fillOutputBuffer(float * outBuffer, const unsigned int numSample
 //    if (fracDelayDiff > 0.00) {
 //        fracDelayDiff_2 = 1.0-fracDelayDiff;
 //    }
-    
+    float val = 0.0;
     for(int i = 0; i < numSamples; i++){
-        outBuffer[blockPos] = buffer[readIndex];
+        val = buffer[readIndex] > 1.0 ? 1.0 : buffer[readIndex];
+        val = val < -1.0 ? -1.0 : val;
+        
+        outBuffer[i] = val;
         
         readIndex = (readIndex + 1) % maxDelay;
-        blockPos = (blockPos + 1) % numSamples;
     }
 }
 

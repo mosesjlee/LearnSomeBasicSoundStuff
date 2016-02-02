@@ -58,6 +58,7 @@ void DelayModule::fillInputBuffer(float * input, int numSamples, int blockPos){
         writeIndex = (writeIndex + 1) % MAX_SAMPLES;
     }
 }
+//ABOVE DOES NOT WORK
 
 void DelayModule::processNextSamples(){
     for (int i = 0; i < MAX_SAMPLES; i++) {
@@ -72,10 +73,13 @@ void DelayModule::processNextSamples(){
 void DelayModule::tick(float * buffer, int numFrames, int numChannels){
     delayLine->fillOutputBuffer(wetBuffer.get(), MAX_SAMPLES, writeIndex);
     
+    float val = 0.0;
     for (int i = 0; i < numFrames; i++){
         for (int j = 0; j < numChannels; j++) {
-            buffer[i * numChannels + j] = (dryBuffer[readIndex] * dryGain) +
-                                          (wetBuffer[readIndex] * wetGain);
+            val = (dryBuffer[readIndex] * dryGain) + (wetBuffer[readIndex] * wetGain);
+            val = val > 1.0 ? 1.0 : val;
+            val = val < -1.0 ? -1.0 : val;
+            buffer[i * numChannels + j] = val;
         }
         readIndex = (readIndex + 1) % MAX_SAMPLES;//MAX_DELAY * SR/MILLISECONDS;
     }

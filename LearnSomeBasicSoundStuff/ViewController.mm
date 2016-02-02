@@ -90,6 +90,7 @@
  
  *******************************************************************************/
 - (IBAction)setTapTempo:(id)sender {
+    
 }
 
 - (IBAction)updateDelayLength:(id)sender {
@@ -99,6 +100,8 @@
 }
 
 - (IBAction)updateDelayLengthFromText:(id)sender {
+    [self.delayLengthSlider setFloatValue:self.delayLengthText.floatValue];
+    self.delayModule->setDelayTime(self.delayLengthSlider.floatValue);
 }
 
 - (IBAction)updateFeedbackGain:(id)sender {
