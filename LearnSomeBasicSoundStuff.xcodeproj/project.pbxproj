@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910007F81C605F450038244C /* SimpleDistortion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 910007F61C605F450038244C /* SimpleDistortion.cpp */; };
 		914D6D311C59F53200B6C476 /* DelayLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914D6D2F1C59F53200B6C476 /* DelayLine.cpp */; };
 		915640B41C56F50B00D6D771 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 915640AC1C56F50B00D6D771 /* AudioFileReader.mm */; };
 		915640B51C56F50B00D6D771 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915640AE1C56F50B00D6D771 /* AudioFileWriter.m */; };
@@ -20,6 +21,7 @@
 		91B6E8801C5C8DF1003E0CC9 /* SineWaveOsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E87E1C5C8DF1003E0CC9 /* SineWaveOsc.cpp */; };
 		91B6E8831C5C8E0D003E0CC9 /* WaveReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E8811C5C8E0D003E0CC9 /* WaveReader.cpp */; };
 		91B6E8861C5C8E83003E0CC9 /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91B6E8841C5C8E83003E0CC9 /* LowPassFilter.cpp */; };
+		91D954391C6D5C3800BC9E02 /* electricguitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91D954381C6D5C3800BC9E02 /* electricguitar.wav */; };
 		91E1CA4E1C5E93C7001A9AC0 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA4C1C5E93C7001A9AC0 /* Utilities.cpp */; };
 		91E1CA511C5E9DFC001A9AC0 /* DelayModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA4F1C5E9DFC001A9AC0 /* DelayModule.cpp */; };
 		91E1CA571C5E9FC8001A9AC0 /* AdderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91E1CA521C5E9FC8001A9AC0 /* AdderObject.cpp */; };
@@ -28,13 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910007F61C605F450038244C /* SimpleDistortion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleDistortion.cpp; sourceTree = "<group>"; };
+		910007F71C605F450038244C /* SimpleDistortion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleDistortion.hpp; sourceTree = "<group>"; };
 		914D6D2F1C59F53200B6C476 /* DelayLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayLine.cpp; sourceTree = "<group>"; };
 		914D6D301C59F53200B6C476 /* DelayLine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DelayLine.hpp; sourceTree = "<group>"; };
 		915640AB1C56F50B00D6D771 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
 		915640AC1C56F50B00D6D771 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
 		915640AD1C56F50B00D6D771 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
 		915640AE1C56F50B00D6D771 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
-		915640AF1C56F50B00D6D771 /* MathObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathObject.h; sourceTree = "<group>"; };
 		915640B01C56F50B00D6D771 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
 		915640B11C56F50B00D6D771 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
 		915640B21C56F50B00D6D771 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		91B6E8851C5C8E83003E0CC9 /* LowPassFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LowPassFilter.hpp; sourceTree = "<group>"; };
 		91B6E8871C5C8EDD003E0CC9 /* AudioSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSpec.h; sourceTree = "<group>"; };
 		91B6E8881C5C9826003E0CC9 /* MySoundStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySoundStuff.h; sourceTree = "<group>"; };
+		91D954381C6D5C3800BC9E02 /* electricguitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electricguitar.wav; sourceTree = "<group>"; };
 		91E1CA4C1C5E93C7001A9AC0 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
 		91E1CA4D1C5E93C7001A9AC0 /* Utilities.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
 		91E1CA4F1C5E9DFC001A9AC0 /* DelayModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayModule.cpp; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				91E1CA521C5E9FC8001A9AC0 /* AdderObject.cpp */,
 				91E1CA561C5E9FC8001A9AC0 /* MultiplierObject.hpp */,
 				91E1CA551C5E9FC8001A9AC0 /* MultiplierObject.cpp */,
+				910007F71C605F450038244C /* SimpleDistortion.hpp */,
+				910007F61C605F450038244C /* SimpleDistortion.cpp */,
 				914D6D301C59F53200B6C476 /* DelayLine.hpp */,
 				914D6D2F1C59F53200B6C476 /* DelayLine.cpp */,
 				91E1CA501C5E9DFC001A9AC0 /* DelayModule.hpp */,
@@ -112,7 +118,6 @@
 				915640AC1C56F50B00D6D771 /* AudioFileReader.mm */,
 				915640AD1C56F50B00D6D771 /* AudioFileWriter.h */,
 				915640AE1C56F50B00D6D771 /* AudioFileWriter.m */,
-				915640AF1C56F50B00D6D771 /* MathObject.h */,
 				915640B01C56F50B00D6D771 /* Novocaine.h */,
 				915640B11C56F50B00D6D771 /* Novocaine.m */,
 				915640B21C56F50B00D6D771 /* RingBuffer.h */,
@@ -140,6 +145,7 @@
 		9180AC4C1C56D741000335FF /* LearnSomeBasicSoundStuff */ = {
 			isa = PBXGroup;
 			children = (
+				91D954381C6D5C3800BC9E02 /* electricguitar.wav */,
 				91E1CA591C5EA4CC001A9AC0 /* guitar1.wav */,
 				9180AC4D1C56D741000335FF /* AppDelegate.h */,
 				9180AC4E1C56D741000335FF /* AppDelegate.mm */,
@@ -221,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9180AC571C56D741000335FF /* Assets.xcassets in Resources */,
+				91D954391C6D5C3800BC9E02 /* electricguitar.wav in Resources */,
 				91E1CA5A1C5EA4CC001A9AC0 /* guitar1.wav in Resources */,
 				9180AC5A1C56D741000335FF /* Main.storyboard in Resources */,
 			);
@@ -247,6 +254,7 @@
 				9180AC4F1C56D741000335FF /* AppDelegate.mm in Sources */,
 				915640B41C56F50B00D6D771 /* AudioFileReader.mm in Sources */,
 				91E1CA581C5E9FC8001A9AC0 /* MultiplierObject.cpp in Sources */,
+				910007F81C605F450038244C /* SimpleDistortion.cpp in Sources */,
 				91B6E8831C5C8E0D003E0CC9 /* WaveReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

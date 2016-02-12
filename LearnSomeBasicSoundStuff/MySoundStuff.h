@@ -12,6 +12,7 @@
 #include "SineWaveOsc.h"
 #include "WaveReader.hpp"
 #include "LowPassFilter.hpp"
+#include "SimpleDistortion.hpp"
 #define MySoundStuff_h
 
 

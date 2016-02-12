@@ -15,17 +15,21 @@
     // Do any additional setup after loading the view.
     
     self.audioManager = [Novocaine audioManager];
+
     self.ringBuffer = new RingBuffer(32768, 2);
     self.playFlag = NO;
     self.playSine = NO;
     
     //Open a simple mono guitar file
-    NSString * path = [[NSBundle mainBundle] pathForResource:  @"guitar1" ofType: @"wav"];
+    NSString * path = [[NSBundle mainBundle] pathForResource:  @"electricguitar" ofType: @"wav"];
     self.monoGuitar = new WaveReader([path cStringUsingEncoding:1]);
     self.monoGuitar->fillSamples();
     
     //Set up the delay module
     self.delayModule = new DelayModule();
+    
+    //Set up the distortion
+    self.simpleDist = new SimpleDistortion();
     
 }
 
@@ -43,12 +47,12 @@
          if(self.playSine){
              self.sineOsc->tick(data, numFrames, numChannels);
          } else {
-//             self.monoGuitar->tick(data, numFrames, numChannels);
-             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
-//             self.delayModule->fillInputBuffer(self.monoGuitar->getBuffer(), MAX_SAMPLES, );
-             self.delayModule->processNextSamples();
-             self.delayModule->tick(data, numFrames, numChannels);
-
+//             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
+//             self.delayModule->processNextSamples();
+//             self.delayModule->tick(data, numFrames, numChannels);
+             self.monoGuitar->tick(self.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
+             self.simpleDist->processNextSamples();
+             self.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
          }
      }];
 }
@@ -129,6 +133,20 @@
 }
 
 - (IBAction)updateDryGainFromText:(id)sender {
+}
+
+/*******************************************************************************
+ 
+ Simple Distortion
+ 
+ *******************************************************************************/
+- (IBAction)setGainLevel:(id)sender {
+    self.simpleDist->setNewDrive(self.gainLevelSlider.floatValue);
+    self.gainLevelTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.gainLevelSlider.floatValue];
+}
+
+- (IBAction)setGainLevelFromText:(id)sender {
 }
 
 /*******************************************************************************

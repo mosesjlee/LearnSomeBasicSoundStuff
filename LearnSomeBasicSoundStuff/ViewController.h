@@ -34,6 +34,10 @@
 @property (strong) IBOutlet NSTextField *dryGainText;
 @property (strong) IBOutlet NSSlider *dryGainSlider;
 
+//Distortion UI Elements
+@property (strong) IBOutlet NSSliderCell *gainLevelSlider;
+@property (strong) IBOutlet NSTextFieldCell *gainLevelTextField;
+
 //My Flags
 @property (nonatomic) BOOL playFlag;
 @property (nonatomic) BOOL playSine;
@@ -48,6 +52,7 @@
 @property (nonatomic) SineWaveOsc * sineOsc;
 @property (nonatomic) WaveReader * monoGuitar;
 @property (nonatomic) DelayModule * delayModule;
+@property (nonatomic) SimpleDistortion * simpleDist;
 
 @end
 

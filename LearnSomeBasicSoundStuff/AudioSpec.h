@@ -20,5 +20,9 @@
 #define MAX_SAMPLES 1024
 #endif
 
+//Maybe i should subclass my stuff.
+class AudioElements {
+    
+};
 
 #endif /* AudioSpec_h */
