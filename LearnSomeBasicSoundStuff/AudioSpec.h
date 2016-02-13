@@ -7,6 +7,7 @@
 //
 
 #include <TargetConditionals.h>
+#include <memory>
 
 #ifndef AudioSpec_h
 #define AudioSpec_h

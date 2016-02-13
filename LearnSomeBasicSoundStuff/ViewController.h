@@ -38,6 +38,20 @@
 @property (strong) IBOutlet NSSliderCell *gainLevelSlider;
 @property (strong) IBOutlet NSTextFieldCell *gainLevelTextField;
 
+//Flanger UI Elements
+@property (strong) IBOutlet NSSliderCell *minDelaySlider;
+@property (strong) IBOutlet NSTextFieldCell *minDelayTextField;
+@property (strong) IBOutlet NSSliderCell *delayRateSlider;
+@property (strong) IBOutlet NSTextFieldCell *delayRateTextField;
+@property (strong) IBOutlet NSSliderCell *delayDepthSlider;
+@property (strong) IBOutlet NSTextFieldCell *delayDepthTextField;
+@property (strong) IBOutlet NSSliderCell *flangerDryGainSlider;
+@property (strong) IBOutlet NSTextFieldCell *flangerDryGainTextField;
+@property (strong) IBOutlet NSSliderCell *flangerWetGainSlider;
+@property (strong) IBOutlet NSTextFieldCell *flangerWetGainTextField;
+@property (strong) IBOutlet NSSliderCell *flangerFeedbackGainSlider;
+@property (strong) IBOutlet NSTextFieldCell *flangerFeedbackGainTextField;
+
 //My Flags
 @property (nonatomic) BOOL playFlag;
 @property (nonatomic) BOOL playSine;
@@ -53,6 +67,7 @@
 @property (nonatomic) WaveReader * monoGuitar;
 @property (nonatomic) DelayModule * delayModule;
 @property (nonatomic) SimpleDistortion * simpleDist;
+@property (nonatomic) FlangerModule * flangerModule;
 
 @end
 

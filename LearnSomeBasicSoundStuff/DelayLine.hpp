@@ -10,7 +10,6 @@
 #define DelayLine_hpp
 
 #include <stdio.h>
-#include <memory>
 
 #include "AudioSpec.h"
 #include "Utilities.hpp"

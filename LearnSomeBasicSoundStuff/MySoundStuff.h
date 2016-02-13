@@ -13,6 +13,7 @@
 #include "WaveReader.hpp"
 #include "LowPassFilter.hpp"
 #include "SimpleDistortion.hpp"
+#include "FlangerModule.hpp"
 #define MySoundStuff_h
 
 

@@ -31,6 +31,9 @@
     //Set up the distortion
     self.simpleDist = new SimpleDistortion();
     
+    //Set up the flanger
+    self.flangerModule = new FlangerModule();
+    
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -52,12 +55,18 @@
          if(wself.playSine){
              wself.sineOsc->tick(data, numFrames, numChannels);
          } else {
+             //For delay
 //             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
 //             self.delayModule->processNextSamples();
 //             self.delayModule->tick(data, numFrames, numChannels);
-             wself.monoGuitar->tick(wself.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
-             wself.simpleDist->processNextSamples();
-             wself.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
+             //For simple distortion
+//             wself.monoGuitar->tick(wself.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
+//             wself.simpleDist->processNextSamples();
+//             wself.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
+             //For tremolo
+            wself.monoGuitar->tick(wself.flangerModule->getInputBuffer(), MAX_SAMPLES, 1);
+            wself.flangerModule->processNextSamples();
+            wself.flangerModule->fillOutputBuffer(data, numFrames, numChannels);
          }
      }];
 }
@@ -152,6 +161,48 @@
 }
 
 - (IBAction)setGainLevelFromText:(id)sender {
+}
+
+/*******************************************************************************
+ 
+Simple Flanger
+ 
+ *******************************************************************************/
+
+- (IBAction)setNewMinDelay:(id)sender {
+    self.flangerModule->setMinDelay(self.minDelaySlider.floatValue);
+    self.minDelayTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.minDelaySlider.floatValue];
+}
+
+- (IBAction)setNewDelayRate:(id)sender {
+    self.flangerModule->setDelayRate(self.delayRateSlider.floatValue);
+    self.delayRateTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.delayRateSlider.floatValue];
+}
+
+- (IBAction)setNewDelayDepth:(id)sender {
+    self.flangerModule->setDelayDepth(self.delayDepthSlider.floatValue);
+    self.delayDepthTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.delayDepthSlider.floatValue];
+}
+
+- (IBAction)setFlangerNewDryGain:(id)sender {
+    self.flangerModule->setDryGain(self.flangerDryGainSlider.floatValue);
+    self.flangerDryGainTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.flangerDryGainSlider.floatValue];
+}
+
+- (IBAction)setFlangerNewWetGain:(id)sender {
+    self.flangerModule->setWetGain(self.flangerWetGainSlider.floatValue);
+    self.flangerWetGainTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.flangerWetGainSlider.floatValue];
+}
+
+- (IBAction)setFlangerNewFeedbackGain:(id)sender {
+    self.flangerModule->setFeedbackGain(self.flangerFeedbackGainSlider.floatValue);
+    self.flangerFeedbackGainTextField.stringValue =
+        [NSString stringWithFormat:@"%.2f", self.flangerFeedbackGainSlider.floatValue];
 }
 
 /*******************************************************************************

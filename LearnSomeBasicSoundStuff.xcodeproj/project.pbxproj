@@ -13,6 +13,7 @@
 		915640B51C56F50B00D6D771 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915640AE1C56F50B00D6D771 /* AudioFileWriter.m */; };
 		915640B61C56F50B00D6D771 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 915640B11C56F50B00D6D771 /* Novocaine.m */; };
 		915640B71C56F50B00D6D771 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 915640B31C56F50B00D6D771 /* RingBuffer.mm */; };
+		917EBFF91C6FA6000077B551 /* FlangerModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 917EBFF71C6FA6000077B551 /* FlangerModule.cpp */; };
 		9180AC4F1C56D741000335FF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC4E1C56D741000335FF /* AppDelegate.mm */; };
 		9180AC521C56D741000335FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC511C56D741000335FF /* main.m */; };
 		9180AC551C56D741000335FF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9180AC541C56D741000335FF /* ViewController.mm */; };
@@ -42,6 +43,8 @@
 		915640B11C56F50B00D6D771 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
 		915640B21C56F50B00D6D771 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
 		915640B31C56F50B00D6D771 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
+		917EBFF71C6FA6000077B551 /* FlangerModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlangerModule.cpp; sourceTree = "<group>"; };
+		917EBFF81C6FA6000077B551 /* FlangerModule.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlangerModule.hpp; sourceTree = "<group>"; };
 		9180AC4A1C56D741000335FF /* LearnSomeBasicSoundStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSomeBasicSoundStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9180AC4D1C56D741000335FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9180AC4E1C56D741000335FF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				91E1CA551C5E9FC8001A9AC0 /* MultiplierObject.cpp */,
 				910007F71C605F450038244C /* SimpleDistortion.hpp */,
 				910007F61C605F450038244C /* SimpleDistortion.cpp */,
+				917EBFF81C6FA6000077B551 /* FlangerModule.hpp */,
+				917EBFF71C6FA6000077B551 /* FlangerModule.cpp */,
 				914D6D301C59F53200B6C476 /* DelayLine.hpp */,
 				914D6D2F1C59F53200B6C476 /* DelayLine.cpp */,
 				91E1CA501C5E9DFC001A9AC0 /* DelayModule.hpp */,
@@ -244,6 +249,7 @@
 				9180AC521C56D741000335FF /* main.m in Sources */,
 				91E1CA4E1C5E93C7001A9AC0 /* Utilities.cpp in Sources */,
 				91E1CA511C5E9DFC001A9AC0 /* DelayModule.cpp in Sources */,
+				917EBFF91C6FA6000077B551 /* FlangerModule.cpp in Sources */,
 				915640B61C56F50B00D6D771 /* Novocaine.m in Sources */,
 				91E1CA571C5E9FC8001A9AC0 /* AdderObject.cpp in Sources */,
 				915640B71C56F50B00D6D771 /* RingBuffer.mm in Sources */,
