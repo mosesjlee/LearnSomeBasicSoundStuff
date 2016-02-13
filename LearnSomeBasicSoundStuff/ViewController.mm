@@ -40,19 +40,24 @@
 }
 
 - (void)viewDidAppear{
+    __weak ViewController * wself = self;
+    //If I want to start experimenting with my own live input
+    [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels) {
+        
+    }];
     
     //Start filling buffer with this
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
-         if(self.playSine){
-             self.sineOsc->tick(data, numFrames, numChannels);
+         if(wself.playSine){
+             wself.sineOsc->tick(data, numFrames, numChannels);
          } else {
 //             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
 //             self.delayModule->processNextSamples();
 //             self.delayModule->tick(data, numFrames, numChannels);
-             self.monoGuitar->tick(self.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
-             self.simpleDist->processNextSamples();
-             self.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
+             wself.monoGuitar->tick(wself.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
+             wself.simpleDist->processNextSamples();
+             wself.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
          }
      }];
 }
