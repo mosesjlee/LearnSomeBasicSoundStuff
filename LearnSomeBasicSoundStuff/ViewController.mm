@@ -56,17 +56,17 @@
              wself.sineOsc->tick(data, numFrames, numChannels);
          } else {
              //For delay
-//             self.monoGuitar->tick(self.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
-//             self.delayModule->processNextSamples();
-//             self.delayModule->tick(data, numFrames, numChannels);
+             wself.monoGuitar->tick(wself.delayModule->getInputBuffer(), MAX_SAMPLES, 1);
+             wself.delayModule->processNextSamples();
+             wself.delayModule->tick(data, numFrames, numChannels);
              //For simple distortion
 //             wself.monoGuitar->tick(wself.simpleDist->getInputBuffer(), MAX_SAMPLES, 1);
 //             wself.simpleDist->processNextSamples();
 //             wself.simpleDist->fillOutputBuffer(data, numFrames, numChannels);
              //For tremolo
-            wself.monoGuitar->tick(wself.flangerModule->getInputBuffer(), MAX_SAMPLES, 1);
-            wself.flangerModule->processNextSamples();
-            wself.flangerModule->fillOutputBuffer(data, numFrames, numChannels);
+//            wself.monoGuitar->tick(wself.flangerModule->getInputBuffer(), MAX_SAMPLES, 1);
+//            wself.flangerModule->processNextSamples();
+//            wself.flangerModule->fillOutputBuffer(data, numFrames, numChannels);
          }
      }];
 }

@@ -14,7 +14,7 @@
 #include "DelayModule.hpp"
 #include "SineWaveOsc.h"
 
-class FlangerModule{
+class FlangerModule : public MyAudioModule{
 public:
     FlangerModule();
     ~FlangerModule();

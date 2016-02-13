@@ -13,7 +13,7 @@
 #include <tgmath.h>
 #include "AudioSpec.h"
 
-class SimpleDistortion {
+class SimpleDistortion : public MyAudioModule {
 public:
     SimpleDistortion();
     ~SimpleDistortion();
