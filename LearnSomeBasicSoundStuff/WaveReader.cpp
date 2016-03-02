@@ -95,8 +95,8 @@ WaveReader::WaveReader(string pathname){
         }
         
         frames = wav.sizeOfData * BITS/ wav.bitsPerSample;
-        //cout << "file name: " << pathname << " with sizeOfdata: " << wav.sizeOfData << " finaOffset: " << finalOffset << endl;
-        cout << "data: " << wav.data << endl;
+//        cout << "file name: " << pathname << " with sizeOfdata: " << wav.sizeOfData << " finaOffset: " << finalOffset << endl;
+//        cout << "data: " << wav.data << endl;
     } else {
         cout << "Could not open" << endl;
     }
@@ -109,7 +109,7 @@ void WaveReader::fillSamples(){
     unsigned int seek_size = hasAdditionalHeaderInf ? finalOffset : DEFAULT_DATA_LOC;
 
     
-    if(!fseek(myFile, seek_size + 8, SEEK_SET)){
+    if(!fseek(myFile, seek_size, SEEK_SET)){
         cout << "Size of float: " << sizeof(float) << endl;
         fread((void *) data.get(), sizeof(char), wav.sizeOfData, myFile);
         
@@ -118,15 +118,20 @@ void WaveReader::fillSamples(){
             
             ss = ((0x0000 | data[i*2+1]) & 0xff) << 8;
             fs = (0x0000 | data[i*2]) & 0xff;
-            s = fs | ss;
+            s = (fs | ss) & 0xffff;
             
             //First attempt was just use memcpy
             //memcpy(&s, &data[i*2], 2);
-            samples[i] = (float) s/32768.0000;
+            samples[i] = (float) s /32768.0000;
             
-            //cout << samples[i] << endl;
         }
     }
+    
+#if DEBUG
+    FILE * s = fopen("/Users/moseslee/Desktop/output", "w");
+    fwrite(samples.get(), sizeof(float), frames, s);
+#endif
+    
 }
 
 void WaveReader::tick(float * buffer, int numFrames, int channels){

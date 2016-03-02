@@ -24,7 +24,6 @@
 //Maybe i should subclass my stuff.
 class MyAudioModule {
 public:
-    virtual ~MyAudioModule();
     virtual void processNextSamples() = 0;
     virtual float * getInputBuffer() = 0;
     virtual void fillOutputBuffer(float *, int, int) = 0;
